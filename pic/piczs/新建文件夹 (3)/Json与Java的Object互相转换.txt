@@ -1,0 +1,27 @@
+1.Map转为Json：
+	Map map=new hashMap<>();
+	map.put("key","value");
+	......
+	String jsonResult = net.sf.json.JSONObject.fromObject(headMap).toString();
+2.Json转化为java_Object_Type:
+
+
+
+
+
+
+3.json转为List：
+	/**
+     * 将json转为List集合
+     * @param jsonResult
+     * @return
+     */
+	 //类似于这种格式{"data": [data1,data2]}
+    private List jsonConvertToList(String jsonResult){
+        JSONObject jsonObject  =new JSONObject(jsonResult);
+        JSONArray jsonArray=jsonObject.getJSONArray("data");
+        String jsonStr=jsonArray.toString();
+        List jsonList  =JSONUtil.fromJson(jsonStr, ArrayList.class);
+        return jsonList;
+    }
+	
