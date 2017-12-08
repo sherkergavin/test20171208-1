@@ -32,30 +32,3 @@
 8. 对项目完成的时间:
         大概是 >= 4个月
 		
-		
-		
-		
-var store_chart_browse = new Ext.data.JsonStore({
-	proxy : new Ext.data.HttpProxy({
-		url:'/Lims/work_monitorl/getChartListAction'
-	}),
-	reader : new Ext.data.JsonReader({
-		root : 'root',
-		totalProperty : 'totalProperty'
-	},
-	[ 
-		{
-			name:'sampleId'	
-		},
-		{
-			name:'itemName'
-		},
-		{
-			name:'stateName'
-		},
-		{
-			name:'stateTime'
-		}
-	]
-	)	
-});
